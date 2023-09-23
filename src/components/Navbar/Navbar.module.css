@@ -1,0 +1,36 @@
+.nav{
+    grid-area: n;
+    background-color: rgb(59, 56, 77);
+  }
+
+  .list {
+    margin: 0;
+    padding: 2em;
+    list-style: none;
+  }
+
+  .item {
+    margin-bottom: 0.3em;
+  }
+
+  .link{
+    color: rgb(255, 208, 0);
+    font-weight: 900;
+    text-decoration: none;
+    font-size: 1.1em;
+    transition: color 0.5s ease-in-out;
+  }
+
+
+  .active {
+    color: yellow;
+    /* font-weight: 900;
+    text-decoration: none; */
+    font-size: 1.12em;
+
+  }
+
+  .item:hover {
+    color: rgb(254, 227, 209);
+
+  }

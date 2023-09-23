@@ -1,0 +1,19 @@
+.posts {
+padding: 1em;
+
+}
+
+.item {
+    /* padding-left: 1.5em; */
+    font-weight: 600;
+  }
+
+  .textarea {
+    border: none;
+    border-radius: 10px;
+    width: 95%;
+    height: 6em;
+    background-color: #eeeefd;
+    font-size: 1.5em;
+    padding: 0.5em;
+  }
