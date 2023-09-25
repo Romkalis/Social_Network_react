@@ -1,8 +1,10 @@
 import React from "react";
 import style from "./Navbar.module.css";
 import { NavLink } from "react-router-dom";
+import Friends from "./Friends/Friends";
 
-const Navbar = () => {
+const Navbar = (props) => {
+
   return (
     <nav className={style.nav}>
       <ul className={style.list}>
@@ -61,11 +63,17 @@ const Navbar = () => {
           </NavLink>
         </li>
         <li>
-          <NavLink 
-          className={(navData) => navData.isActive ? `${style.link} ${style.active}` : style.link}
-          to="/about">About</NavLink>
+          <NavLink
+            className={(navData) =>
+              navData.isActive ? `${style.link} ${style.active}` : style.link
+            }
+            to="/about"
+          >
+            About
+          </NavLink>
         </li>
       </ul>
+      <Friends dialogsData={props.messagesPage.dialogsData}></Friends>
     </nav>
   );
 };

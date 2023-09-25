@@ -4,11 +4,11 @@ import ProfileInfo from "./ProfileInfo/ProfileInfo";
 
 
 
-const Profile = ({ postsData }) => {
+const Profile = (props) => {
     return (
       <section>
       <ProfileInfo></ProfileInfo>
-      <Posts postsData={postsData}></Posts>
+      <Posts postsData={props.state.postsData}></Posts>
       Content
       </section>
     )

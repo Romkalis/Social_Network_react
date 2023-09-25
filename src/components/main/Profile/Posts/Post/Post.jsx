@@ -1,8 +1,8 @@
 import React from "react";
 import style from "./Post.module.css";
+// import Avatar from "../../../Avatar/Avatar";
 
 const Post = (props) => {
-  console.log(props);
 
   return (
     <div className={style.item}>

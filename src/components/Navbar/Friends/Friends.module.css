@@ -1,0 +1,15 @@
+.title {
+    text-align: center;
+    color: white;
+    font-size: 2em;
+}
+
+.friends_list {
+    padding: 1.5em;
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    align-items: center;
+    justify-content: space-between;
+}

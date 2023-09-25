@@ -1,0 +1,30 @@
+
+
+.friendItem {
+    margin: 0;
+    padding: 0;
+    font-weight: 900;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+    color: white;
+    font-size: 1.2em;
+    transition: color 0.6s ease;
+}
+
+.friendItem:hover {
+    color: gold;
+}
+
+
+
+.avatar {
+    border-radius: 50%;
+    width: 4em;
+}
+
+.name {
+    padding: 5px;
+}
+
