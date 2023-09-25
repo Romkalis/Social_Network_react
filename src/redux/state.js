@@ -6,6 +6,7 @@ export let dialogsData =[
     {id: 5, name: "Anton"},
     {id: 6, name: "Lymen"},
     {id: 7, name: "Yukki"},
+    {id: 8, name: "Tolya"},
 ]
 
 export let messagesData = [

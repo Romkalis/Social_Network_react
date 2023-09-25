@@ -1,11 +1,10 @@
 import React from "react";
 import style from "./Posts.module.css";
 import Post from "./Post/Post";
-import { postsData } from "../../../mock/mock";
 
-const Posts = () => {
-  
-  let postsElements = postsData.map((post) => (
+
+const Posts = (props) => {
+  let postsElements = props.postsData.map((post) => (
     <Post
       message={post.post}
       likesCount={post.like}
