@@ -8,12 +8,19 @@
 
  }
 
+ .messagesArea {
+   margin-left: 2em;
+   /* background-color: blue; */
+   padding: 1em;
+ }
  .messages {
     list-style-type: none;
+    
  }
 
  .message {
     padding: 0.2em;
+    background-color: #7152ef;
 
  }
 
@@ -21,11 +28,49 @@
     color: gold
  }
 
- .dialog {
+ .userDialog {
    display: flex;
    align-items: center;
-   padding: 0.2em;
-
+   margin: 0.5em;
+   background-color: #eeeefd;
+   border-radius: 1em;
+   /* color: #38455b; */
  }
 
+ .sendMessage {
+   /* background-color: #7152ef; */
+ }
+
+ .textarea {
+   box-sizing: border-box;
+   border: none;
+   border-radius: 10px;
+   width: 95%;
+   min-height: 3em;
+   background-color: #eeeefd;
+   font-size: 1.5em;
+   padding: 1em;
+   margin-left: 2em;
+   resize: none;
+ }
+
+ .newPostButton {
+   margin-left: 2em;
+   min-width: 12em;
+   height: 3em;
+   border: none;
+   background-color: #7152ef;
+   color: #ffffff;
+   font-size: 1.2em;
+   border-radius: 15px;
+   transition: all 0.3s ease;
+   margin-left: 2em;
+
+ }
+ .newPostButton:hover {
+   box-shadow: #1b1339;
+   background-color: #542eeb;
+   border: 2px solid #b99f65;
+   
+ }
 

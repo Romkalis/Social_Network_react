@@ -25,7 +25,7 @@ export let state = {}
             {id: 1, name: "Dima", ava: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRIDFPey7181729G4wqDS_4dVJ2_s-iThWUwQfFo_YkEw&s"},
             {id: 2, name: "Roma", isFriend: 1, ava: "https://www.interfax.ru/ftproot/photos/photostory/2022/04/29/week/week7_1100.jpg"},
             {id: 3, name: "Andrew", ava: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRIDFPey7181729G4wqDS_4dVJ2_s-iThWUwQfFo_YkEw&s"},
-            {id: 4, name: "Lyci", ava: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRIDFPey7181729G4wqDS_4dVJ2_s-iThWUwQfFo_YkEw&s"},
+            {id: 4, name: "Lyci",isFriend: 1,  ava: "https://i.pinimg.com/474x/c2/38/23/c238234d4e2ef20b768f9bfe5766745f.jpg"},
             {id: 5, name: "Anton", ava: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRIDFPey7181729G4wqDS_4dVJ2_s-iThWUwQfFo_YkEw&s"},
             {id: 6, name: "Lymen", isFriend: 1, ava: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSwkyhoMA_A3DhFhKFjbeAvBXqJHZ41elwKpbq5eOZerw&s"},
             {id: 7, name: "Yukki", isFriend: 1, ava: "https://royal-groom.ru/sites/default/files/breed/shelti.jpg"},

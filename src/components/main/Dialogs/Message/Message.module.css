@@ -1,7 +1,10 @@
  .message {
-    padding: 0.2em;
-
+    margin: 0.3em;
+    padding: 01em;
+    background-color: #7152ef;
+    width: max-content;
+    max-width: 50%;
+    font-size: 1.2em;
+    border-radius: 15px;
+    color: aliceblue
  }
-
-
-

@@ -13,6 +13,7 @@
 
 .friendItem:hover {
     color: gold;
+    
 }
 
 
@@ -22,7 +23,15 @@
     width: 4em;
     height: 4em;
     object-fit: cover;
+    transition: all 0.2s ease;
+
 }
+.avatar:hover,
+.avatar:active {
+    box-sizing: border-box;
+    border: 4px solid rgba(134, 166, 246, 0.486);
+}
+
 
 .name {
     padding: 5px;

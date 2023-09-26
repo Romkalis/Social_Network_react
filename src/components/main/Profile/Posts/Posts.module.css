@@ -19,3 +19,22 @@ padding: 1em;
 
     resize: none;
   }
+
+  .newPostButton {
+    min-width: 12em;
+    height: 3em;
+    border: none;
+    background-color: #7152ef;
+    color: #ffffff;
+    font-size: 1.2em;
+    border-radius: 15px;
+    transition: all 0.3s ease;
+    margin: 1.2em auto;
+  }
+
+  .newPostButton:hover {
+    box-shadow: #1b1339;
+    background-color: #542eeb;
+    border: 2px solid #b99f65;
+    
+  }
