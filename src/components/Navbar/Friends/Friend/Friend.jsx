@@ -3,16 +3,22 @@ import style from "./Friend.module.css";
 import { NavLink } from "react-router-dom";
 
 const Friend = (props) => {
-  console.log(props.friend[2])
+  let userFriends = props.friend.friends.map((friend) => {
+    return (
+      <li className="friendItem">
+        <NavLink className={style.friendItem} key={friend.id}>
+          <img className={style.avatar} src={friend.ava} alt="avatar" />
+          <span className={style.name}>{friend.name}</span>
+        </NavLink>
+      </li>
+    );
+  });
 
   return (
-    <li className="friendItem">
-      <NavLink className={style.friendItem}>
-        <img  className={style.avatar} src={props.friend[2].ava} alt="avatar" />
-        <span className={style.name}>{props.friend[2].name}</span>
-      </NavLink>
-    </li>
-  );
+    <>
+    { userFriends }
+    </>
+  )
 };
 
 export default Friend;

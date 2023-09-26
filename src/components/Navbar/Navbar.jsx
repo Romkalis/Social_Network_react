@@ -4,7 +4,6 @@ import { NavLink } from "react-router-dom";
 import Friends from "./Friends/Friends";
 
 const Navbar = (props) => {
-
   return (
     <nav className={style.nav}>
       <ul className={style.list}>
@@ -73,7 +72,7 @@ const Navbar = (props) => {
           </NavLink>
         </li>
       </ul>
-      <Friends dialogsData={props.messagesPage.dialogsData}></Friends>
+      <Friends friends = {props.sideBar}></Friends>
     </nav>
   );
 };

@@ -10,12 +10,13 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 
 
 const App = (props) => {
+
    
  return (
     <BrowserRouter>
       <div className="app-wrapper">
         <Header />
-        <Navbar messagesPage={props.state.messagesPage}/>
+        <Navbar sideBar={props.state.sideBar}/>
         <main className="main-content">
           <Routes>
             <Route 

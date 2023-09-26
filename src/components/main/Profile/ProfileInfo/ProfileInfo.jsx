@@ -4,7 +4,7 @@ const UserInfo = () => {
   return (
     <div>
       <div className={style.header}>
-        <img
+        <img className={style.headerImage}
           src="https://htmlbook.ru/files/images/layout2/6-05.png"
           width="100%"
           height="auto"
