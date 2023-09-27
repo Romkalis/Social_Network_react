@@ -6,9 +6,30 @@ import Post from "./Post/Post";
 const Posts = (props) => {
 
   let newPostElement = React.createRef();
+
+  //------отвечает за добавление поста при нажатии на кнопку--------
   let addPost = () => {
-    alert(newPostElement.current.value)
+//------------
+    // let text = newPostElement.current.value
+    // props.addPost(text)
+    // теперь у нас свойство text добавляется при вводе в state, и можно его брать прямо оттуда, так что можно упростить и зарефакторить код. в state мы пропишем, что можно брать значение прямо из state.profilePage.newPostText, куда оно будет добавляться при вводе каждого символа.
+    
+    props.addPost()
+    //-----------------------
+    
+    props.updateNewPostText('')
+    //функция прокинута через пропс из state, из бизнес логики 
+    //и будет выполнятся на уровне бизнес логики
   }
+
+  //-------отвечает за добаввление текста, при изменении текстареа------
+  // при введении нового символа данные отправляются в пропс, 
+  //приходят оттуда и отрисвываются в UI
+  let onPostChange = () => {
+    let text = newPostElement.current.value
+    props.updateNewPostText(text)
+  }
+
 
   let postsElements = props.postsData.map((post) => (
     <Post
@@ -22,7 +43,13 @@ const Posts = (props) => {
     <div className={style.posts}>
       <h2 className="postsTitle">My Posts</h2>
       <p>
-        <textarea ref={newPostElement} className={style.textarea}></textarea>
+        <textarea 
+          ref={newPostElement} 
+          className={style.textarea} 
+          value={props.newPostText}
+          onChange={() => {
+            onPostChange()
+          }}/>
       </p>
       <div>
         <button className={style.newPostButton} onClick={ addPost } type="button">New Post</button>
