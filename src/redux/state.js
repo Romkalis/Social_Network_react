@@ -66,17 +66,15 @@ let store = {
       ],
       newMessageText: "",
     },
-    // sideBar: this.isFriend(),
   },
-  getState () { 
-    debugger
-    return this._state},
+  getState() {
+    return this._state;
+  },
   _callSubscriber() {
-    //
+    // функция обновляющая страницу после изменений
     console.log("I will never be in console");
   },
   addPost() {
-
     let newPost = {
       id: 5,
       post: this._state.profilePage.newPostText,
@@ -104,9 +102,9 @@ let store = {
     this._callSubscriber(this._state);
   },
   isFriend() {
-    this._state.messagesPage.dialogsData.filter((user) => {
-      return user.isFriend;
-    });
+    const friends = this._state.messagesPage.dialogsData.filter((user) => user.isFriend === 1);
+  // проверка, если в массиве dialogs data у объекта есть атрибут isFriend, добавляем сюда.
+    return friends; // Возвращаем массив друзей
   },
   // --------- функция наблюдатель, для избежания циркулярной зависимости от index.js ----------------
   subscribe(observer) {
@@ -114,10 +112,9 @@ let store = {
     //паттерн observer, по этому паттерну работают обработчики событий.
     // при вызове subscriber функиции присваетвается другая ф-я в качестве колбэка.
   },
- 
-  // проверка, если в массиве dialogs data у объекта есть атрибут isFriend, добавляем сюда.
+
 };
 
 export default store;
 
-window.store = store;
+// window.store = store;

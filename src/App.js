@@ -10,11 +10,12 @@ import Settings from "./components/main/Settings/Settings";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 
 const App = (props) => {
+
   return (
     <BrowserRouter>
       <div className="app-wrapper">
         <Header />
-        <Navbar sideBar={props.state.sideBar} />
+        <Navbar isFriend={props.isFriend}/>
         <main className="main-content">
           <Routes>
             <Route

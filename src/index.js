@@ -18,7 +18,8 @@ let rerenderEntireTree = () => {
         addPost={store.addPost.bind(store)} 
         updateNewPostText={store.updateNewPostText.bind(store)}
         updateMessageText={store.updateMessageText.bind(store)}
-        addMessage={store.addMessage.bind(store)}/>
+        addMessage={store.addMessage.bind(store)}
+        isFriend={store.isFriend.bind(store)}/>
       </React.StrictMode>
     );
   }

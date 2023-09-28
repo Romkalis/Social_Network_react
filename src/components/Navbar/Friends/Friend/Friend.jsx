@@ -3,7 +3,9 @@ import style from "./Friend.module.css";
 import { NavLink } from "react-router-dom";
 
 const Friend = (props) => {
-  let userFriends = props.friend.friends.map((friend) => {
+  let friends = props.isFriend()
+
+  let userFriends = friends.map((friend) => {
     return (
       <li className="friendItem">
         <NavLink className={style.friendItem} key={friend.id}>
