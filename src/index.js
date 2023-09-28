@@ -1,24 +1,30 @@
-// import React from "react";
-// import ReactDOM from "react-dom/client";
-// import "./index.css";
-// import App from "./App";
-// import reportWebVitals from "./reportWebVitals";
-import {state} from "./redux/state.js";
+import "./index.css";
+import reportWebVitals from "./reportWebVitals";
+import {state, subscribe} from "./redux/state.js";
+// import subscribe from "./redux/state.js";
 // import { addPost } from "./redux/state.js";
-import { rerenderEntireTree } from "./render"
+import React from 'react';
+import ReactDOM from 'react-dom/client';
+import App from './App';
+import { addPost, updateNewPostText, updateMessageText, addMessage } from './redux/state.js';
 
-// const root = ReactDOM.createRoot(document.getElementById('root'));
-// root.render(
-//   <React.StrictMode>
-//   <BrowserRouter>
-//     <App state={state} addPost={addPost} />
-//   </BrowserRouter>
-// </React.StrictMode>
-// );
+
+const root = ReactDOM.createRoot(document.getElementById('root')); 
+
+let rerenderEntireTree = () => {
+    root.render(
+      <React.StrictMode>
+        <App state={state} 
+        addPost={addPost} 
+        updateNewPostText={updateNewPostText}
+        updateMessageText={updateMessageText}
+        addMessage={addMessage}/>
+      </React.StrictMode>
+    );
+  }
 
 rerenderEntireTree(state)
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-// reportWebVitals();
+reportWebVitals();
+
+subscribe(rerenderEntireTree)

@@ -56,6 +56,17 @@ const Navbar = (props) => {
             className={(navData) =>
               navData.isActive ? style.active + ` ${style.link}` : style.link
             }
+            to="/photos"
+          >
+            Photos
+          </NavLink>
+        </li>
+
+        <li className={style.item}>
+          <NavLink
+            className={(navData) =>
+              navData.isActive ? style.active + ` ${style.link}` : style.link
+            }
             to="/settings"
           >
             Settings

@@ -9,15 +9,7 @@ const Posts = (props) => {
 
   //------отвечает за добавление поста при нажатии на кнопку--------
   let addPost = () => {
-//------------
-    // let text = newPostElement.current.value
-    // props.addPost(text)
-    // теперь у нас свойство text добавляется при вводе в state, и можно его брать прямо оттуда, так что можно упростить и зарефакторить код. в state мы пропишем, что можно брать значение прямо из state.profilePage.newPostText, куда оно будет добавляться при вводе каждого символа.
-    
     props.addPost()
-    //-----------------------
-    
-    props.updateNewPostText('')
     //функция прокинута через пропс из state, из бизнес логики 
     //и будет выполнятся на уровне бизнес логики
   }
@@ -47,9 +39,7 @@ const Posts = (props) => {
           ref={newPostElement} 
           className={style.textarea} 
           value={props.newPostText}
-          onChange={() => {
-            onPostChange()
-          }}/>
+          onChange={() => {onPostChange()}}/>
       </p>
       <div>
         <button className={style.newPostButton} onClick={ addPost } type="button">New Post</button>
