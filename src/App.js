@@ -4,7 +4,7 @@ import Navbar from "./components/Navbar/Navbar";
 import Profile from "./components/main/Profile/Profile";
 import Dialogs from "./components/main/Dialogs/Dialogs";
 import Music from "./components/main/Music/Music";
-import Photos from "./components/main/Photos/Photos";
+// import Photos from "./components/main/Photos/Photos";
 import News from "./components/main/News/News";
 import Settings from "./components/main/Settings/Settings";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
