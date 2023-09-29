@@ -2,26 +2,21 @@ import React from "react";
 import style from "./Posts.module.css";
 import Post from "./Post/Post";
 
-
 const Posts = (props) => {
-
   let newPostElement = React.createRef();
 
   //------отвечает за добавление поста при нажатии на кнопку--------
   let addPost = () => {
-    props.addPost()
-    //функция прокинута через пропс из state, из бизнес логики 
-    //и будет выполнятся на уровне бизнес логики
-  }
+    props.dispatch({ type: "ADD-POST" });
+  };
 
   //-------отвечает за добаввление текста, при изменении текстареа------
-  // при введении нового символа данные отправляются в пропс, 
+  // при введении нового символа данные отправляются в пропс,
   //приходят оттуда и отрисвываются в UI
   let onPostChange = () => {
-    let text = newPostElement.current.value
-    props.updateNewPostText(text)
-  }
-
+    let newText = newPostElement.current.value;
+    props.dispatch({ type: "UPDATE-NEW-POST-TEXT", newText: newText });
+  };
 
   let postsElements = props.postsData.map((post) => (
     <Post
@@ -35,20 +30,23 @@ const Posts = (props) => {
     <div className={style.posts}>
       <h2 className="postsTitle">My Posts</h2>
       <p>
-        <textarea 
-          ref={newPostElement} 
-          className={style.textarea} 
+        <textarea
+          ref={newPostElement}
+          className={style.textarea}
           value={props.newPostText}
-          onChange={() => {onPostChange()}}/>
+          onChange={() => {
+            onPostChange();
+          }}
+        />
       </p>
       <div>
-        <button className={style.newPostButton} onClick={ addPost } type="button">New Post</button>
+        <button className={style.newPostButton} onClick={addPost} type="button">
+          New Post
+        </button>
       </div>
       <div className={style.item}>
         New Post
-
         {postsElements}
-
       </div>
     </div>
   );

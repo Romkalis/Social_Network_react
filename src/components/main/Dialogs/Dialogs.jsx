@@ -4,16 +4,17 @@ import Dialog from "./Dialog/Dialog";
 import Message from "./Message/Message";
 
 const Dialogs = (props) => {
-
+  // debugger
   let newMessageElement = React.createRef();
 
   let addMessageText = () => {
-    props.addMessage()
+    props.dispatch({type: 'ADD_MESSAGE'})
     newMessageElement.current.value =""
   };
 
   let onMessageChange = () => {
-   props.updateMessageText(newMessageElement.current.value)
+  let newText = newMessageElement.current.value
+   props.dispatch({type: 'UPDATE-MESSAGE-TEXT', newText: newText})
    
   }
 

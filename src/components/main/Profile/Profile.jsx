@@ -2,21 +2,18 @@ import React from "react";
 import Posts from "./Posts/Posts";
 import ProfileInfo from "./ProfileInfo/ProfileInfo";
 
-
-
 const Profile = (props) => {
-    return (
-      <section>
+  return (
+    <section>
       <ProfileInfo></ProfileInfo>
-      <Posts 
-        postsData={props.profilePage.postsData} 
-        newPostText={props.profilePage.newPostText} 
-        addPost={props.addPost}
-        updateNewPostText={props.updateNewPostText} 
+      <Posts
+        postsData={props.profilePage.postsData}
+        newPostText={props.profilePage.newPostText}
+        dispatch={props.dispatch}
       />
       Content
-      </section>
-    )
-}
+    </section>
+  );
+};
 
-export default Profile
+export default Profile;

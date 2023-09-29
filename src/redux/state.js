@@ -67,40 +67,41 @@ let store = {
       newMessageText: "",
     },
   },
-  getState() {
-    return this._state;
-  },
   _callSubscriber() {
     // функция обновляющая страницу после изменений
     console.log("I will never be in console");
   },
-  addPost() {
-    let newPost = {
-      id: 5,
-      post: this._state.profilePage.newPostText,
-      like: 0,
-    };
-    this._state.profilePage.postsData.push(newPost);
-    this._state.profilePage.newPostText = "";
-    this._callSubscriber(this._state);
+  getState() {
+    return this._state;
   },
-  updateNewPostText(newText) {
-    this._state.profilePage.newPostText = newText;
-    this._callSubscriber(this._state);
+
+  dispatch(action) {
+    if (action.type === 'ADD-POST') {
+      let newPost = {
+        id: 5,
+        post: this._state.profilePage.newPostText,
+        like: 0,
+      };
+      this._state.profilePage.postsData.push(newPost);
+      this._state.profilePage.newPostText = "";
+      this._callSubscriber(this._state);
+    } else if( action.type === 'ADD_MESSAGE') {
+      let newMessage = {
+        id: this._state.messagesPage.messagesData.length + 1,
+        text: this._state.messagesPage.newMessageText,
+      };
+      this._state.messagesPage.messagesData.push(newMessage);
+      this._state.messagesPage.newMessageText = "";
+      this._callSubscriber(this._state);
+    } else if (action.type === 'UPDATE-NEW-POST-TEXT') {
+      this._state.profilePage.newPostText = action.newText;
+      this._callSubscriber(this._state);
+    } else if (action.type === 'UPDATE-MESSAGE-TEXT') {
+      this._state.messagesPage.newMessageText = action.newText;
+      this._callSubscriber(this._state);
+    }
   },
-  addMessage() {
-    let newMessage = {
-      id: this._state.messagesPage.messagesData.length + 1,
-      text: this._state.messagesPage.newMessageText,
-    };
-    this._state.messagesPage.messagesData.push(newMessage);
-    this._state.messagesPage.newMessageText = "";
-    this._callSubscriber(this._state);
-  },
-  updateMessageText(newText) {
-    this._state.messagesPage.newMessageText = newText;
-    this._callSubscriber(this._state);
-  },
+
   isFriend() {
     const friends = this._state.messagesPage.dialogsData.filter((user) => user.isFriend === 1);
   // проверка, если в массиве dialogs data у объекта есть атрибут isFriend, добавляем сюда.
