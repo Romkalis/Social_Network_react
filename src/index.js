@@ -1,12 +1,9 @@
 import "./index.css";
 import reportWebVitals from "./reportWebVitals";
 import store from "./redux/state.js";
-// import subscribe from "./redux/state.js";
-// import { addPost } from "./redux/state.js";
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import App from './App';
-// import { addPost, updateNewPostText, updateMessageText, addMessage } from './redux/state.js';
 
 
 const root = ReactDOM.createRoot(document.getElementById('root')); 

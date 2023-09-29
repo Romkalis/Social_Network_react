@@ -1,13 +1,15 @@
 import React from "react";
 import style from "./Posts.module.css";
 import Post from "./Post/Post";
+import { addPostActionCreator, updateNewPostActionCreator } from "../../../../redux/state";
+
 
 const Posts = (props) => {
   let newPostElement = React.createRef();
 
   //------отвечает за добавление поста при нажатии на кнопку--------
   let addPost = () => {
-    props.dispatch({ type: "ADD-POST" });
+    props.dispatch(addPostActionCreator());
   };
 
   //-------отвечает за добаввление текста, при изменении текстареа------
@@ -15,7 +17,7 @@ const Posts = (props) => {
   //приходят оттуда и отрисвываются в UI
   let onPostChange = () => {
     let newText = newPostElement.current.value;
-    props.dispatch({ type: "UPDATE-NEW-POST-TEXT", newText: newText });
+    props.dispatch(updateNewPostActionCreator(newText));
   };
 
   let postsElements = props.postsData.map((post) => (
