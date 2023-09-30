@@ -1,3 +1,4 @@
+import React from "react";
 import "./App.css";
 import Header from "./components/Header/Header";
 import Navbar from "./components/Navbar/Navbar";
@@ -14,7 +15,9 @@ const App = (props) => {
     <BrowserRouter>
       <div className="app-wrapper">
         <Header />
-        <Navbar isFriend={props.isFriend} />
+        <Navbar 
+        // isFriend={props.isFriend} 
+        />
         <main className="main-content">
           <Routes>
             <Route

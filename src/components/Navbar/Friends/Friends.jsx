@@ -7,7 +7,9 @@ const Friends = (props) => {
     <aside>
       <h3 className={style.title}>Friends</h3>
       <ul className={style.friends_list}>
-        <Friend isFriend={props.isFriend}></Friend> 
+        <Friend 
+        // isFriend={props.isFriend}
+        ></Friend> 
       </ul>
     </aside>
 

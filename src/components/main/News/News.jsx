@@ -1,3 +1,4 @@
+import React from "react";
 // import style from "./News.module.css";
 
 const News = (props) => {
@@ -7,4 +8,3 @@ const News = (props) => {
 };
 
 export default News;
- 

@@ -83,7 +83,9 @@ const Navbar = (props) => {
           </NavLink>
         </li>
       </ul>
-      <Friends isFriend={props.isFriend}></Friends>
+      <Friends 
+      // isFriend={props.isFriend}
+      ></Friends>
     </nav>
   );
 };

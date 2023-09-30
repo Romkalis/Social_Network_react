@@ -77,24 +77,25 @@ let store = {
   getState() {
     return this._state;
   },
-
   dispatch(action) {
-
-    this._state.profilePage = profileReducer(this._state.profilePage, action)
-
-    this._state.messagesPage = messagesReducer(this._state.messagesPage, action)
-
+    this._state.profilePage = profileReducer(this._state.profilePage, action);
+    this._state.messagesPage = messagesReducer(
+      this._state.messagesPage,
+      action
+    );
     this._callSubscriber(this._state);
   },
 
-  isFriend() {
-    const friends = 
-this._state.messagesPage.dialogsData.filter(
-      (user) => user.isFriend === 1
-    );
-    // проверка, если в массиве dialogs data у объекта есть атрибут isFriend, добавляем сюда.
-    return friends; // Возвращаем массив друзей
-  },
+
+  // isFriend() {
+  //   const friends = this._state.messagesPage.dialogsData.filter(
+  //     (user) => user.isFriend === 1
+  //   );
+  //   // проверка, если в массиве dialogs data у объекта есть атрибут isFriend, добавляем сюда.
+  //   return friends; // Возвращаем массив друзей
+  // },
+
+
   // --------- функция наблюдатель, для избежания циркулярной зависимости от index.js ----------------
   subscribe(observer) {
     this._callSubscriber = observer; //принимает renderEntireTree как колбэк и вызывает здесь.

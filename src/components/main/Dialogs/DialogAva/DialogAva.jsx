@@ -1,3 +1,4 @@
+import React from "react";
 import style from "./DialogAva.module.css";
 // import { NavLink } from "react-router-dom";
 
