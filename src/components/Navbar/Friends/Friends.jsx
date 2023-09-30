@@ -1,6 +1,5 @@
 import React from "react";
 import style from "./Friends.module.css";
-// import { NavLink } from "react-router-dom";
 import Friend from "./Friend/Friend";
 
 const Friends = (props) => {
