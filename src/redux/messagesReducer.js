@@ -1,4 +1,4 @@
-import store from "./state";
+import store from "./store";
 
 const ADD_MESSAGE = "ADD-MESSAGE";
 const UPDATE_MESSAGE_TEXT = "UPDATE-MESSAGE-TEXT";

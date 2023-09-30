@@ -20,19 +20,6 @@ if (action.type === ADD_POST) {
   return state;
 }
 
-    // if (action.type === ADD_POST) {
-    //   let newPost = {
-    //     id: 5,
-    //     post: this._state.profilePage.newPostText,
-    //     like: 0,
-    //   };
-    //   this._state.profilePage.postsData.push(newPost);
-    //   this._state.profilePage.newPostText = "";
-    //   this._callSubscriber(this._state);
-    // } else if (action.type === UPDATE_NEW_POST_TEXT) {
-    //   this._state.profilePage.newPostText = action.newText;
-    //   this._callSubscriber(this._state);
-
 export const updateNewPostActionCreator = (newText) => ({ type: 'UPDATE-NEW-POST-TEXT', newText: newText });
 export const addPostActionCreator = () =>({ type: 'ADD-POST' });
 export default profileReducer;

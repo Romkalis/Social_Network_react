@@ -1,10 +1,6 @@
 import profileReducer from "./profileReducer";
 import messagesReducer from "./messagesReducer";
 
-const ADD_MESSAGE = "ADD-MESSAGE";
-const UPDATE_MESSAGE_TEXT = "UPDATE-MESSAGE-TEXT";
-
-
 let store = {
   _state: {
     profilePage: {
@@ -87,21 +83,8 @@ let store = {
     this._state.profilePage = profileReducer(this._state.profilePage, action)
 
     this._state.messagesPage = messagesReducer(this._state.messagesPage, action)
-    
-    // if (action.type === UPDATE_MESSAGE_TEXT) {
-    //   this._state.messagesPage.newMessageText = action.newText;
-    //   this._callSubscriber(this._state);
-    // } else if (action.type === ADD_MESSAGE) {
-    //   let newMessage = {
-    //     id: this._state.messagesPage.messagesData.length + 1,
-    //     text: this._state.messagesPage.newMessageText,
-    //   };
-    //   this._state.messagesPage.messagesData.push(newMessage);
-    //   this._state.messagesPage.newMessageText = "";
-    //   this._callSubscriber(this._state);
-    // }
-    this._callSubscriber(this._state);
 
+    this._callSubscriber(this._state);
   },
 
   isFriend() {
@@ -120,12 +103,6 @@ this._state.messagesPage.dialogsData.filter(
   },
 };
 
-export const addMessageActionCreator = (data) => ({ type: ADD_MESSAGE });
-export const updateMessageTextActionCreator = (newText) => ({
-  type: UPDATE_MESSAGE_TEXT,
-  newText: newText,
-});
-
 export default store;
 
-// window.store = store;
+window.store = store;
