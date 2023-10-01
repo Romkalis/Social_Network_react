@@ -4,28 +4,38 @@ import {
   addPostActionCreator,
   updateNewPostActionCreator,
 } from "../../../../redux/profileReducer";
+import StoreContext from "../../../../StoreContext";
 
-const PostsContainer = (props) => {
-  //------отвечает за добавление поста при нажатии на кнопку--------
-  let addPost = () => {
-    props.dispatch(addPostActionCreator());
-  };
-  //-------отвечает за добаввление текста, при изменении текстареа------
-  // при введении нового символа данные отправляются в пропс,
-  //приходят оттуда и отрисвываются в UI
-  let onPostChange = (newText) => {
-    let action = updateNewPostActionCreator(newText);
-    props.dispatch(action);
-  };
+
+const PostsContainer = () => {
+
   return (
-    <>
-      <Posts
+      <StoreContext.Consumer>{
+        (store) => {
+
+          let state = store.getState()
+          //------отвечает за добавление поста при нажатии на кнопку--------
+          let addPost = () => {
+            store.dispatch(addPostActionCreator());
+          };
+          //-------отвечает за добавление текста, при изменении textarea------
+        
+          let onPostChange = (newText) => {
+            let action = updateNewPostActionCreator(newText);
+            store.dispatch(action);
+          };
+
+          return (
+            <Posts
         updateNewPostText={onPostChange}
         addPost={addPost}
-        newPostText={props.newPostText}
-        postsData={props.postsData}
+        newPostText={state.profilePage.newPostText}
+        postsData={state.profilePage.postsData}
       />
-      </>
+          )
+        }
+        }</StoreContext.Consumer>
+      
   );
 
 };

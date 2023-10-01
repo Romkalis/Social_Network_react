@@ -66,7 +66,6 @@ const messagesReducer = (state = initialState, action) => {
   // debugger
 
   if (action.type === ADD_MESSAGE) {
-    console.log(store)
     let newMessage = {
       id: state.messagesData.length + 1,
       text: state.newMessageText,

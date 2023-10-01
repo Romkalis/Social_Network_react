@@ -7,9 +7,7 @@ const Profile = (props) => {
     <section>
       <ProfileInfo></ProfileInfo>
       <PostsContainer
-        postsData={props.profilePage.postsData}
-        newPostText={props.profilePage.newPostText}
-        dispatch={props.dispatch}
+        store={props.store}
       />
       Content
     </section>
