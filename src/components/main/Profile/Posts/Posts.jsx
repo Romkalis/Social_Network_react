@@ -1,25 +1,21 @@
 import React from "react";
 import style from "./Posts.module.css";
 import Post from "./Post/Post";
-// import addPostActionCreator, updateNewPostActionCreator  from "../../../../redux/profileReducer";
-import { addPostActionCreator } from "../../../../redux/profileReducer";
-import { updateNewPostActionCreator } from "../../../../redux/profileReducer";
+
 
 
 const Posts = (props) => {
+
+
   let newPostElement = React.createRef();
 
-  //------отвечает за добавление поста при нажатии на кнопку--------
-  let addPost = () => {
-    props.dispatch(addPostActionCreator());
+  let onAddPost = () => {
+    props.addPost()
   };
 
-  //-------отвечает за добаввление текста, при изменении текстареа------
-  // при введении нового символа данные отправляются в пропс,
-  //приходят оттуда и отрисвываются в UI
   let onPostChange = () => {
     let newText = newPostElement.current.value;
-    props.dispatch(updateNewPostActionCreator(newText));
+    props.updateNewPostText(newText)
   };
 
   let postsElements = props.postsData.map((post) => (
@@ -29,6 +25,7 @@ const Posts = (props) => {
       ava="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSE4bWNz_tAe4s6UwXsk88ud4ZxABoiKdot6A&usqp=CAU"
     />
   ));
+
 
   return (
     <div className={style.posts}>
@@ -44,7 +41,7 @@ const Posts = (props) => {
         />
       </p>
       <div>
-        <button className={style.newPostButton} onClick={addPost} type="button">
+        <button className={style.newPostButton} onClick={onAddPost} type="button">
           New Post
         </button>
       </div>

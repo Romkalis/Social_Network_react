@@ -3,7 +3,7 @@ import "./App.css";
 import Header from "./components/Header/Header";
 import Navbar from "./components/Navbar/Navbar";
 import Profile from "./components/main/Profile/Profile";
-import Dialogs from "./components/main/Dialogs/Dialogs";
+import DialogsContainer from "./components/main/Dialogs/DialogsContainer";
 import Music from "./components/main/Music/Music";
 // import Photos from "./components/main/Photos/Photos";
 import News from "./components/main/News/News";
@@ -23,9 +23,10 @@ const App = (props) => {
             <Route
               path="/dialogs/*"
               element={
-                <Dialogs
+                <DialogsContainer
                   state={props.state.messagesPage}
                   dispatch={props.dispatch}
+                  store={props.store}
                 />
               }
             />

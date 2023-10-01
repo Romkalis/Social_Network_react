@@ -1,6 +1,7 @@
+// eslint-disable-next-line
 import React from "react";
-import style from "./Friend.module.css";
-import { NavLink } from "react-router-dom";
+// import style from "./Friend.module.css";
+// import { NavLink } from "react-router-dom";
 
 const Friend = (props) => {
   // let friends = props.isFriend()
