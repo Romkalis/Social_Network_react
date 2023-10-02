@@ -27,7 +27,6 @@ if (action.type === ADD_POST) {
     state.newPostText = action.newText;
   }
 
-
   return state;
 }
 
