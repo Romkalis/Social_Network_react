@@ -62,22 +62,48 @@ let initialState = {
 const messagesReducer = (state = initialState, action) => {
 
   // debugger
+  let stateCopy = {...state}
 
-  if (action.type === ADD_MESSAGE) {
-    let newMessage = {
-      id: state.messagesData.length + 1,
-      text: state.newMessageText,
-    };
-    state.messagesData.push(newMessage);
-    state.newMessageText = "";
+  switch(action.type) {
+    case ADD_MESSAGE:
+      let newMessage = {
+        id: stateCopy.messagesData.length + 1,
+        text: stateCopy.newMessageText,
+      };
 
-  } else if (action.type === UPDATE_MESSAGE_TEXT) {
-    state.newMessageText = action.newText;
-    console.log(state.newMessageText)
+      return {
+        ...state,
+      messagesData: [...state.messagesData, newMessage],
+      dialogsData: [...state.dialogsData],
+      newMessageText: '',
+      }
+    case UPDATE_MESSAGE_TEXT: 
+      return {
+      ...state,
+      newMessageText: action.newText,
+    }
+    default:
+      return state
   }
+}
+//   if (action.type === ADD_MESSAGE) {
 
-  return state
-};
+//     let newMessage = {
+//       id: stateCopy.messagesData.length + 1,
+//       text: stateCopy.newMessageText,
+//     };
+    
+//     stateCopy.messagesData = [...state.messagesData]
+//     stateCopy.dialogsData = [...state.dialogsData]
+//     stateCopy.messagesData.push(newMessage);
+//     stateCopy.newMessageText = "";
+
+//   } else if (action.type === UPDATE_MESSAGE_TEXT) {
+//     stateCopy.newMessageText = action.newText;
+//   }
+
+//   return stateCopy
+// };
 
 export const addMessageActionCreator = () => ({ type: ADD_MESSAGE });
 export const updateMessageTextActionCreator = (newText) => ({
