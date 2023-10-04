@@ -15,6 +15,7 @@ const Posts = (props) => {
 
   let postsElements = props.postsData.map((post) => (
     <Post
+      key={post.id} 
       message={post.post}
       likesCount={post.like}
       ava="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSE4bWNz_tAe4s6UwXsk88ud4ZxABoiKdot6A&usqp=CAU"

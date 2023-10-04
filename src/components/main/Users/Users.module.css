@@ -1,0 +1,94 @@
+.usersList {
+  padding: 0;
+  list-style-type: none;
+  margin: 2em;
+}
+
+.userItem {
+  padding: 0;
+  display: flex;
+  background-color: #eeeefd;
+  border: 2px solid #7152ef;
+  margin-bottom: 0.5em;
+  border-radius: 1em;
+}
+
+.usersAva {
+  display: flex;
+  flex-direction: column;
+  padding: 1em;
+align-items: center;  
+}
+
+.avatar {
+  border-radius: 30%;
+  width: 5em;
+  margin-bottom: 1em;
+}
+
+.followButton {
+  width: 6em;
+  height: 2em;
+  border: none;
+  border-radius: 10px;
+  background-color: gold;
+  transition: background-color 0.8s, ease;
+}
+
+.followButton:hover {
+  background-color: #fff;
+}
+
+.userInfo {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  /* outline: 5px solid red; */
+  gap: 1em;
+  width: 80%;
+}
+  
+.userFullName {
+  font-weight: 900;
+  font-size: 1.5em;
+  padding: 2em;
+}
+
+.userStatus {
+  font-weight: 900;  
+  margin-right: 2em;
+}
+
+.location {
+  display: flex;
+  flex-direction: column;
+  /* align-items: center; */
+  font-size: 1.2em;
+  padding: 2em;
+  text-align: right;
+}
+
+
+
+
+    /* background-color: #eeeefd; */
+/* 
+  .newPostButton {
+    min-width: 12em;
+    height: 3em;
+    border: none;
+    background-color: #7152ef;
+    color: #ffffff;
+    font-size: 1.2em;
+    border-radius: 15px;
+    transition: all 0.3s ease;
+    margin: 1.2em auto;
+  }
+
+  .newPostButton:hover {
+    box-shadow: #1b1339;
+    background-color: #542eeb;
+    border: 2px solid #b99f65;
+    
+  } */

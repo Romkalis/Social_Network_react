@@ -47,7 +47,7 @@ const profileReducer = (state = initialState, action) => {
   //   stateCopy.newPostText = action.newText;
   // }
 
-  return stateCopy;
+  // return stateCopy;
 };
 
 export const updateNewPostActionCreator = (newText) => ({

@@ -61,7 +61,6 @@ let initialState = {
 
 const messagesReducer = (state = initialState, action) => {
 
-  // debugger
   let stateCopy = {...state}
 
   switch(action.type) {
@@ -70,12 +69,10 @@ const messagesReducer = (state = initialState, action) => {
         id: stateCopy.messagesData.length + 1,
         text: stateCopy.newMessageText,
       };
-
       return {
         ...state,
-      messagesData: [...state.messagesData, newMessage],
-      dialogsData: [...state.dialogsData],
-      newMessageText: '',
+      messagesData: [...state.messagesData, newMessage],//вместо push(*)
+      newMessageText: '',//??? разобраться, не срабатывает.
       }
     case UPDATE_MESSAGE_TEXT: 
       return {

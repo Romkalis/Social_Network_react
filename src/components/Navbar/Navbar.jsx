@@ -34,6 +34,17 @@ const Navbar = (props) => {
             className={(navData) =>
               navData.isActive ? style.active + ` ${style.link}` : style.link
             }
+            to="/users"
+          >
+            Users
+          </NavLink>
+        </li>
+
+        <li className={style.item}>
+          <NavLink
+            className={(navData) =>
+              navData.isActive ? style.active + ` ${style.link}` : style.link
+            }
             to="/news"
           >
             News
