@@ -17,12 +17,12 @@ let Users = (props) => {
       <ul className={style.paginationList}>
         {pages.map((item) => {
           return (
-            <span
+            <button
               className={item === currentPage ? style.selectedPage : ""}
               onClick={() => props.onPageChanged(item)}
             >
               {item}
-            </span>
+            </button>
           );
         })}
       </ul>
