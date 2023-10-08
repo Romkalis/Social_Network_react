@@ -1,9 +1,9 @@
 import React from "react";
 import style from "./Users.module.css";
-import * as axios from "axios";
 import undefAva from "../../../assets/undefAva.png";
 
 let Users = (props) => {
+  debugger
 
     let pageCount = Math.ceil(props.totalUsersCount / props.pageSize);
     let currentPage = props.currentPage;
@@ -42,14 +42,14 @@ let Users = (props) => {
                 {user.followed ? (
                   <button
                     className={style.followButton}
-                    onClick={() => props.followUser(user.id)}
+                    onClick={() => props.follow(user.id)}
                   >
                     Follow
                   </button>
                 ) : (
                   <button
                     className={style.followButton}
-                    onClick={() => props.unfollowUser(user.id)}
+                    onClick={() => props.unfollow(user.id)}
                   >
                     Unfollow
                   </button>
