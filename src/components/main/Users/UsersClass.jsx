@@ -3,27 +3,61 @@ import style from "./Users.module.css";
 import axios from "axios";
 import undefAva from "../../../assets/undefAva.png";
 
-class Users extends React.Component {
-  constructor(props) {
-    super(props);
-      
-      axios
-        .get("https://social-network.samuraijs.com/api/1.0/users")
-        .then((responce) => {
-          this.props.setUsers(responce.data.items);
-        });
-  }
-  // это можем не писать, это дефолтные значения.
+class UsersAPIComponent extends React.Component {
+  // constructor(props) {
+  //   super(props);
+  //   // это можем не писать, это дефолтные значения.
+  // }
 
-  getUsers = () => {
-
+  componentDidMount = () => {
+    // действия выполняются когда компонента встроена в DOM
+    console.log(this.props);
+    axios
+      .get(
+        `https://social-network.samuraijs.com/api/1.0/users?page=${this.props.currentPage}&count=${this.props.pageSize}`
+      )
+      .then((responce) => {
+        this.props.setUsers(responce.data.items);
+        this.props.setTotalUserCount(responce.data.totalCount)
+      });
   };
 
-  render() {
+  onPageChanged = (item) => { // функция обработчик-событий. 
+    //каждый раз при нажатии на кнопку страницы - запрашивает новые данные с сервера
+    this.props.setCurrentPage(item);
 
-    return (
+    axios
+      .get(
+        `https://social-network.samuraijs.com/api/1.0/users?page=${item}&count=${this.props.pageSize}`
+      )
+      .then((responce) => {
+        this.props.setUsers(responce.data.items);
+      });
+  }
+
+  render = () => {
+    let pageCount = Math.ceil(this.props.totalUsersCount / this.props.pageSize);
+    let currentPage = this.props.currentPage;
+    let pages = [];
+    for (let i = 1; i <= pageCount; i++) {
+      pages.push(i);
+    }
+
+    return <Users />
+    (
       <section>
-        <button onClick={this.getUsers}>Загрузи user-ов</button>
+        <ul className={style.paginationList}>
+          {pages.map((item) => {
+            return (
+              <span
+                className={item === currentPage ? style.selectedPage : ""}
+                onClick={() => this.onPageChanged(item)}
+              >
+                {item}
+              </span>
+            );
+          })}
+        </ul>
         <ul className={style.usersList}>
           {this.props.users.map((user) => {
             return (
@@ -67,7 +101,7 @@ class Users extends React.Component {
         </ul>
       </section>
     );
-  }
+  };
 }
 
 export default Users;
