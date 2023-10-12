@@ -1,9 +1,9 @@
 import React from "react";
 import style from "./Users.module.css";
 import undefAva from "../../../assets/undefAva.png";
+import { NavLink } from "react-router-dom";
 
 let Users = (props) => {
-  debugger
 
     let pageCount = Math.ceil(props.totalUsersCount / props.pageSize);
     let currentPage = props.currentPage;
@@ -31,6 +31,7 @@ let Users = (props) => {
           return (
             <li className={style.userItem}>
               <div className={style.usersAva}>
+                <NavLink to={'/profile/' + user.id}>
                 <img
                   className={style.avatar}
                   src={
@@ -38,7 +39,7 @@ let Users = (props) => {
                   }
                   alt="avatar"
                 />
-
+                </NavLink>
                 {user.followed ? (
                   <button
                     className={style.followButton}

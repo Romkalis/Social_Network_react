@@ -1,5 +1,6 @@
 const UPDATE_NEW_POST_TEXT = "UPDATE-NEW-POST-TEXT";
 const ADD_POST = "ADD-POST";
+const SET_USER_PROFILE = "SET-USER-PROFILE";
 
 let initialState = {
   postsData: [
@@ -9,6 +10,8 @@ let initialState = {
     { id: 4, post: "Meow", like: 2 },
     { id: 5, post: "Hi guys, how are your tails?", like: 1 },
   ],
+  profile: null,
+  // так как нам с сервера сейчас придет через экшн криейтор объект профайл, надо его заранее заинициализировать, укажем нуль, чтобы явно было понятно, что в момент инициализации объект пустой.
   newPostText: "",
 };
 
@@ -33,21 +36,18 @@ const profileReducer = (state = initialState, action) => {
         ...state,
         newPostText: action.newText,
       };
+
+    case SET_USER_PROFILE:
+
+    return {
+     ...state,
+     profile: action.profile,
+     // если кейс setUserProfile, корпируем state, меняем в нем профайл, на профайл из экшена.
+
+    }
     default: return state;
   }
-  // if (action.type === ADD_POST) {
-  //   let newPost = {
-  //     id: 5,
-  //     post: stateCopy.newPostText,
-  //     like: 0,
-  //   };
-  //   stateCopy.postsData.push(newPost);
-  //   stateCopy.newPostText = "";
-  // } else if (action.type === UPDATE_NEW_POST_TEXT) {
-  //   stateCopy.newPostText = action.newText;
-  // }
-
-  // return stateCopy;
+  
 };
 
 export const updateNewPostActionCreator = (newText) => ({
@@ -55,4 +55,7 @@ export const updateNewPostActionCreator = (newText) => ({
   newText: newText,
 });
 export const addPostActionCreator = () => ({ type: "ADD-POST" });
+export const setUserProfile = (profile) => ({type: SET_USER_PROFILE, profile})
+
+
 export default profileReducer;

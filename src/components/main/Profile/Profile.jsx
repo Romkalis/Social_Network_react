@@ -3,9 +3,10 @@ import PostsContainer from "./Posts/PostsContainer";
 import ProfileInfo from "./ProfileInfo/ProfileInfo";
 
 const Profile = (props) => {
+ console.log(props)
   return (
     <section>
-      <ProfileInfo></ProfileInfo>
+      <ProfileInfo profile={props.profile}></ProfileInfo>
       <PostsContainer
         store={props.store}
       />
